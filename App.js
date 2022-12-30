@@ -1,20 +1,51 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import {View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Second from './Views/Second';
+import Login from './Views/Login';
+import SignUp from './Views/SignUp';
+import ForgotPassword from './Views/ForgotPassword';
+import Verification from './Views/Verification';
+import ResetPassword from './Views/ResetPassword';
+import AccountVerified from './Views/AccountVerified';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+      {/* <Stack.Screen
+        name="Welcome"
+        component={Second}
+        /> */}
+        {/* <Stack.Screen
+        name="Login"
+        component={Login}
+        /> */}
+        {/* <Stack.Screen
+        name="SignUp"
+        component={SignUp}
+        /> */}
+        {/* <Stack.Screen
+        name="Forgot Password"
+        component={ForgotPassword}
+        /> */}
+        {/* <Stack.Screen
+        name="Verification"
+        component={Verification}
+        /> */}
+        {/* <Stack.Screen
+        name="Reset Password"
+        component={ResetPassword}
+        /> */}
+        <Stack.Screen
+        name="AccountVerified"
+        component={AccountVerified}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
